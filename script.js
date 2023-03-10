@@ -6,7 +6,11 @@ let price= document.querySelector('#movie')
 let num=0
 for (let i = 0; i < seat.length; i++) {
     seat[i].onclick = function () {
-        if (seat[i].getAttribute('isSelected'))
+        if (seat[i].classList.contains('occupied')) {
+            console.log(11);
+            return
+        }
+        else if (seat[i].getAttribute('isSelected')  )
         {seat[i].removeAttribute('isSelected')
             seat[i].style.backgroundColor = '#444451'
             num--
